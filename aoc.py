@@ -53,8 +53,9 @@ def run_all_days(days):
 def parse_arguments():
   parser = argparse.ArgumentParser()
 
-  parser.add_argument('-d', '--day', help='Specify a specific day', type=int)
-  parser.add_argument('-c', '--create', help='Create a day folder from the template', type=int)
+  parser.add_argument('-d', '--day', help='Run a specific day', type=int)
+  parser.add_argument('-r', '--run', help='Alias for --day', type=int, dest='day')
+  parser.add_argument('-c', '--create', help='Create a new day folder from the template', type=int)
   parser.add_argument('-a', '--all', help='Run all days', action='store_true')
 
   return parser.parse_args()
